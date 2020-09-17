@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Kenney High.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Kenney Rocket.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://VBoxContainer.gd" type="Script" id=3]
+[ext_resource path="res://boton.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 2 )
+
+[node name="creditos" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 21.7552 ]
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -48.3878
+margin_top = 290.633
+margin_right = 1011.61
+margin_bottom = 532.633
+custom_fonts/font = SubResource( 1 )
+text = "                                                                                                              gael yeray rocha
+																											                                                                                                              
+																																					                                                                                                            										 Benjamín Rivas B.    
+																										
+							                                                                                                              Joaquin Sara																																																                                                                                                                         
+																																																																																																								                                                                                                                      
+																																																																																																																																					                                                                                                                   FloriXx "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 279.0
+margin_top = 121.0
+margin_right = 579.0
+margin_bottom = 227.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 4 )
+
+[node name="regresar" type="Label" parent="."]
+margin_left = 317.357
+margin_top = 149.225
+margin_right = 543.357
+margin_bottom = 190.225
+custom_fonts/font = SubResource( 2 )
+text = "regresar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="VBoxContainer" method="_on_TextureButton_pressed"]
