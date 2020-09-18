@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Kenney High.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://TextureButton.gd" type="Script" id=2]
+[ext_resource path="res://pausa.gd" type="Script" id=3]
+[ext_resource path="res://boton.png" type="Texture" id=4]
+[ext_resource path="res://botonpress.png" type="Texture" id=5]
+[ext_resource path="res://Kenney Rocket.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 57
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 78
+font_data = ExtResource( 6 )
+
+[node name="pausa" type="Node2D"]
+position = Vector2( 360, 216 )
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reanudar" type="TextureButton" parent="VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = -0.280029
+margin_top = 159.033
+margin_right = 299.72
+margin_bottom = 259.033
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="TextureButton" parent="VBoxContainer2"]
+margin_right = 300.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 47.881
+margin_top = 11.7621
+margin_right = 397.881
+margin_bottom = 147.762
+custom_fonts/font = SubResource( 1 )
+text = "REANUDAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 5.5025
+margin_top = 179.157
+margin_right = 355.503
+margin_bottom = 315.157
+custom_fonts/font = SubResource( 1 )
+text = "VOLVER AL MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = -9.22986
+margin_top = -252.88
+margin_right = 302.77
+margin_bottom = -53.8802
+custom_fonts/font = SubResource( 2 )
+text = "
+menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/reanudar" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/reanudar" to="VBoxContainer/reanudar" method="_on_reanudar_pressed"]
+[connection signal="pressed" from="VBoxContainer/reanudar" to="VBoxContainer/reanudar" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="VBoxContainer2/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer2/menu" to="." method="_on_TextureButton_pressed"]
